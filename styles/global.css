@@ -1,0 +1,100 @@
+@import url("reset.css");
+@import url("palette.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16;
+  color: var(--slate-950);
+  background-color: var(--slate-200);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "sidebar header header header header"
+    "sidebar projects projects projects announcements"
+    "sidebar projects projects projects announcements"
+    "sidebar projects projects projects trending"
+    "sidebar projects projects projects trending";
+}
+
+header {
+  grid-area: header;
+  background-color: var(--slate-50);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 4rem;
+}
+
+header input {
+  width: 60ch;
+  background-color: var(--slate-200);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+}
+
+header a {
+  color: var(--slate-950);
+  text-decoration: none;
+}
+
+span.header-span {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+aside#sidebar {
+  grid-area: sidebar;
+  padding: 2rem;
+  color: var(--slate-50);
+  background-color: var(--blue-500);
+}
+
+aside#sidebar h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+
+aside#sidebar i {
+  margin-right: 1rem;
+}
+
+aside#sidebar a {
+  display: block;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+aside#sidebar a#nav-group-border {
+  margin-bottom: 4rem;
+}
+
+section#projects {
+  grid-area: projects;
+}
+
+section#announcements {
+  grid-area: announcements;
+}
+
+section#trending {
+  grid-area: trending;
+}

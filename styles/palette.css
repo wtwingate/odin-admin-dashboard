@@ -1,0 +1,18 @@
+:root {
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-500: #64748b;
+  --slate-700: #334155;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  --blue-300: #93c5fd;
+  --blue-500: #3b82f6;
+  --blue-700: #1d4ed8;
+
+  --yellow-300: #fde047;
+  --yellow-500: #eab308;
+  --yellow-700: #a16207;
+}
