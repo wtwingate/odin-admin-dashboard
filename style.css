@@ -1,0 +1,264 @@
+/* general styles */
+
+:root {
+  /* color theme */
+  --white: #f8fafc;
+  --light-gray: #e2e8f0;
+  --dark-gray: #94a3b8;
+  --black: #020617;
+  --blue: #0284c7;
+  --yellow: #eab308;
+
+  /* padding and margin sizes */
+  --size-xs: 4px;
+  --size-s: 8px;
+  --size-m: 16px;
+  --size-l: 24px;
+  --size-xl: 32px;
+  --size-2xl: 48px;
+  --size-3xl: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "side head head head head"
+    "side main main main main"
+    "side main main main main"
+    "side main main main main"
+    "side main main main main";
+}
+
+/* font awesome icons */
+
+i {
+  /* set width so that text and icons in the sidebar align properly */
+  width: var(--size-xl);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+/* sidebar styles */
+
+aside {
+  grid-area: side;
+  padding: var(--size-l);
+  color: var(--white);
+  background-color: var(--blue);
+
+  & h1 {
+    margin-top: 0px;
+    margin-bottom: var(--size-3xl);
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  & a {
+    margin-bottom: var(--size-l);
+    color: var(--white);
+    text-decoration: none;
+  }
+}
+
+/* header styles */
+
+header {
+  grid-area: head;
+  padding: var(--size-l);
+
+  & a {
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  & i {
+    font-size: 1.25rem;
+  }
+
+  & input {
+    padding: var(--size-s) var(--size-m);
+    background-color: var(--light-gray);
+    border: none;
+    border-radius: 2rem;
+  }
+
+  & div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.top-row {
+      margin-bottom: var(--size-m);
+
+      & p {
+        margin: 0px;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+    }
+
+    &.bottom-row {
+      margin-top: var(--size-m);
+    }
+  }
+
+  & span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--size-l);
+  }
+
+  & div.welcome {
+    display: block;
+
+    & * {
+      margin: var(--size-xs);
+    }
+  }
+
+  & button {
+    padding: var(--size-s) var(--size-xl);
+    color: var(--white);
+    background-color: var(--blue);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+}
+
+/* main styles */
+
+main {
+  grid-area: main;
+  padding: var(--size-l);
+  background-color: var(--light-gray);
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "projects announcements"
+    "projects trending";
+  gap: var(--size-l);
+}
+
+section {
+  & h2 {
+    margin-top: 0px;
+    margin-bottom: var(--size-s);
+  }
+
+  & h3,
+  & h4 {
+    margin-top: 0px;
+    margin-bottom: var(--size-xs);
+  }
+
+  & p {
+    margin-top: 0px;
+  }
+
+  & .card {
+    background-color: var(--white);
+    padding: var(--size-l);
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 4px 0px var(--dark-gray);
+  }
+}
+
+.projects {
+  grid-area: projects;
+
+  & .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: var(--size-l);
+  }
+
+  & .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    border-left: solid var(--size-s) var(--yellow);
+  }
+
+  & .card-icons {
+    margin-top: auto;
+    width: 100%;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: var(--size-l);
+  }
+}
+
+.announcements {
+  grid-area: announcements;
+
+  & p {
+    font-size: 0.8rem;
+  }
+
+  & hr {
+    color: var(--light-gray);
+    margin: var(--size-m) 0px;
+  }
+}
+
+.trending {
+  grid-area: trending;
+
+  & .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--size-m);
+  }
+
+  & .person {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: var(--size-s);
+
+    & p {
+      margin: var(--size-xs);
+    }
+
+    & p:first-child {
+      font-weight: bold;
+    }
+  }
+}
