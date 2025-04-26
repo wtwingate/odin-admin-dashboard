@@ -1,6 +1,6 @@
 # odin-admin-dashboard
 
-A dummy admin dashboard made for The Odin Project
+An admin dashboard made for The Odin Project
 
 # Attributions
 
